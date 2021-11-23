@@ -5,27 +5,28 @@ import { createConnection } from "../database/connectSqlite.js";
 
 
 // Hent Projects
-router.get("/projects", async (req, res) => {
+router.get("/api/projects", async (req, res) => {
+    const connection = await createConnection();
 
-    const projects = await connection.all("SELECT * from projects");
+    const projects = await connection.all("SELECT * FROM projects");
 
     res.send(projects);
 });
 
 // Create
-router.post("/projects", async (req, res) => {
+router.post("/api/projects", async (req, res) => {
     const projectToCreate = req.body;
 
     const connection = await createConnection();
 
     const projects = await connection.run(
         `
-        INSERT INTO peojects
-        ('title', 'date', 'description', 'github')
+        INSERT INTO projects
+        ('title', 'category', 'technologies', 'links')
         VALUES
         (?, ?, ?, ?);
         `,
-        [projectToCreate.title, projectToCreate.date, projectToCreate.description, projectToCreate.github]
+        [projectToCreate.title, projectToCreate.category, projectToCreate.technologies, projectToCreate.links]
     ).then(() => {
         res.sendStatus(200)
     }).catch(() => {
@@ -62,12 +63,12 @@ router.put("/api/projects/", async (req, res) => {
             UPDATE projects 
             SET 
             title = ?,
-            date = ?,
-            description = ?,
-            github = ?
+            category = ?,
+            technologies = ?,
+            links = ?
             WHERE id = ?
             `,
-        [project.title, project.date, project.description, project.github, project.id]
+        [project.title, project.category, project.technologies, project.links, project.id]
     ).then(() => {
         res.sendStatus(200)
     }).catch(() => {

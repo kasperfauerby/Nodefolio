@@ -4,14 +4,14 @@ import fs from "fs"
 
 const router = express.Router();
 const email = "kf.nodefolio@outlook.com";
-const mail = JSON.parse(fs.readFileSync("mail.json"))
+const pass = JSON.parse(fs.readFileSync("mail.json"))
 
 router.post("/contact/", async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'hotmail',
         auth: {
           user: email,
-          pass: mail.pwd
+          pass: pass.word
         }
       })
 

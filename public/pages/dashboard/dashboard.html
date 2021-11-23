@@ -1,8 +1,17 @@
-
-
-
-
-
+<h2>Create Project</h2>
+<div class="dashboard-wrapper">
+    <div class="row">
+        <input id="title" type="text" placeholder="Projekt titel" required>
+        <input id="category" type="text" placeholder="Kategori" required>
+    </div>
+    <div class="row">
+        <input size=50 id="technologies" type="text" placeholder="Teknologi" required>
+        <input size=50 id="links" type="text" placeholder="Links" required>
+    </div>
+    <div>
+        <button id="create-project">Create Project</button>
+    </div>
+</div>
 
 <h2>Update / Delete Projects</h2>
 
@@ -16,15 +25,13 @@
       <th>Delete</th>
       <th>Update</th>
     </tr>
-    <!-- Create TR, TDs and append to table -->
   </table>
 
 <hr class="bottom">
 <div class="dashboard-wrapper">
-    <a href="/admin/logout"><button class="form-element button">Logout</button></a>
+    <a href="/admin/logout"><button>Logout</button></a>
 </div>
 
-
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="./pages/dashboard/dashboard.js"></script>

@@ -9,6 +9,9 @@ function login() {
         if (res.status == 200) {
             setTimeout(() => location.href= "/dashboard", 1500);
         }
+        else {
+            toastr.info("Couldn't login - Check password and try again.'")
+        }
         
     }) 
 }

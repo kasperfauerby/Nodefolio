@@ -9,9 +9,9 @@ import { createConnection } from "./connectSqlite.js";
         CREATE TABLE projects (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
-            date DATE,
-            description TEXT,
-            github TEXT,
+            category DATE,
+            technologies TEXT,
+            links TEXT,
         );
     `
     await connection.exec(projectsTableSchema);
