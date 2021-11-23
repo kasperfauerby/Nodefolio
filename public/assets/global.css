@@ -37,13 +37,26 @@ footer {
     padding-left: 5vw;
 }
 
+input[type="text"] , textarea{
+    color: white;
+    background-color:#090a0f;
+  
+  }
+
+
+  input[type="email"] {
+    color: white;
+    background-color:#090a0f;
+  
+  }
+
 html {
     height: 100%;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
 
-#title {
+#heading {
     position: absolute;
     top: 50%;
     left: 0;
@@ -58,7 +71,7 @@ html {
     padding-left: 10px;
 }
 
-#title span {
+#heading span {
     background: -webkit-linear-gradient(white, #38495a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
